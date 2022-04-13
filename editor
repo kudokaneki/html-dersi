@@ -1,0 +1,59 @@
+<html>
+<head><meta charset="utf-8">
+	<title>kod editor</title>
+</head>
+<body>
+    <a href="https://code.k-html.com" rel="dofollow">k-html editör</a>
+<style type="text/css">.ed-wrapper{
+    margin: 30px;
+  }
+  .editor-wrapper{
+    height: 50vh;
+    position: relative;
+    border: 1px solid #999;
+  }
+  #output{
+    width: 100%;
+    height: 50vh;
+    border: 1px solid #999;
+  }
+  #editor { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+</style>
+<!-- html -->
+<div class="ed-wrapper">
+<h3>Editor</h3>
+
+<div class="editor-wrapper">
+<div id="editor"></div>
+</div>
+
+<h3>sonu&ccedil;</h3>
+<iframe id="output"></iframe></div>
+<script src='https://ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js'></script><!-- js --><script>
+  let editor = ace.edit("editor");
+  let output = document.querySelector('#output').contentDocument;
+
+  // set editor mode
+  editor.session.setMode("ace/mode/html");
+  
+  
+
+  // update output on editor change
+  editor.on('change', function(){
+    output.open();
+    output.write( editor.getValue() );
+    output.close();
+  });
+</script>
+
+<a href="https://www.k-html.com" rel="dofollow">HTML öğren</a>
+
+
+</body>
+</html>
